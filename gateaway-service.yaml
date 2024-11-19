@@ -1,0 +1,38 @@
+server:
+  port: 8001
+  
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+
+        - id: loanRequest-service
+          uri: lb://loanRequest-service
+          predicates:
+            - Path=/loanRequest/**
+
+        - id: simulation-service
+          uri: lb://simulation-service
+          predicates:
+            - Path=/simulation/**
+
+        - id: fileUpload-service
+          uri: lb://fileUpload-service
+          predicates:
+            - Path=/fileUpload/**
