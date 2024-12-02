@@ -36,3 +36,15 @@ spring:
           uri: lb://fileUpload-service
           predicates:
             - Path=/fileUpload/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            -Path=auth-service/**
+
+
+
+
+
+
+
+            
