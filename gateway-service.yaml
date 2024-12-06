@@ -22,8 +22,8 @@ spring:
           predicates:
             - Path=/users/**
 
-        - id: loanRequest-service
-          uri: lb://loanRequest-service
+        - id: loan-request-service
+          uri: lb://loan-request-service
           predicates:
             - Path=/loanRequest/**
 
