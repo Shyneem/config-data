@@ -33,9 +33,9 @@ spring:
             - Path=/simulation/**
 
         - id: fileUpload-service
-          uri: lb://fileUpload-service
+          uri: lb://file-upload-service
           predicates:
-            - Path=/fileUpload/**
+            - Path=/file-upload/**
         - id: auth-service
           uri: lb://auth-service
           predicates:
