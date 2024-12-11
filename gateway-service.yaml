@@ -14,7 +14,7 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins:
-              - "http://172.*.*.*" # La IP de Minikube
+              - "*"
             allowedMethods:
               - "GET"
               - "POST"
