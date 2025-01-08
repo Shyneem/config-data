@@ -43,7 +43,7 @@ spring:
         - id: evaluation-service
           uri: lb://evaluation-service
           predicates:
-            - Path=/evaluations/**
+            - Path=/evaluation/**
 
 
 
