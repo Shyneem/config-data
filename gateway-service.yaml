@@ -64,4 +64,3 @@ spring:
               - "Content-Type"
               - "Cache-Control"
             allowCredentials: true
-      
