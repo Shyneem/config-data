@@ -45,12 +45,11 @@ spring:
           uri: lb://evaluation-service
           predicates:
             - Path=/evaluation/**
-            
+
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOriginPatterns:
-              - "http://*.example.com" # Patrón de dominio permitido
+            allowedOrigins:
               - "http://172.30.100.64:30000" # Dominio del frontend local
             allowedMethods:
               - "GET"
@@ -65,3 +64,4 @@ spring:
               - "Content-Type"
               - "Cache-Control"
             allowCredentials: true
+      
