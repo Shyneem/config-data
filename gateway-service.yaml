@@ -45,22 +45,16 @@ spring:
           uri: lb://evaluation-service
           predicates:
             - Path=/evaluation/**
-
+            
       globalcors:
         corsConfigurations:
           '[/**]': # Aplica a todos los endpoints del Gateway
             allowedOrigins:
-              - "http://172.30.100.64:30000" # Dominio del frontend local
+              - "*" # Permitir todos los orígenes temporalmente
             allowedMethods:
-              - "GET"
-              - "POST"
-              - "PUT"
-              - "DELETE"
-              - "OPTIONS"
+              - "*" # Permitir todos los métodos temporalmente
             allowedHeaders:
-              - "*"
+              - "*" # Permitir todos los encabezados temporalmente
             exposedHeaders:
-              - "Authorization"
-              - "Content-Type"
-              - "Cache-Control"
+              - "*" # Exponer todos los encabezados temporalmente
             allowCredentials: true
