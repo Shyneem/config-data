@@ -1,5 +1,6 @@
 server:
   port: 8001
+
 eureka:
   client:
     fetch-registry: true
@@ -45,10 +46,21 @@ spring:
           predicates:
             - Path=/evaluation/**
 
-
-
-
-
-
-
-            
+      globalcors:
+        corsConfigurations:
+          '[/**]': # Aplica a todos los endpoints del Gateway
+            allowedOrigins:
+              - "http://172.30.100.64:30000" # Dominio del frontend local
+            allowedMethods:
+              - "GET"
+              - "POST"
+              - "PUT"
+              - "DELETE"
+              - "OPTIONS"
+            allowedHeaders:
+              - "*"
+            exposedHeaders:
+              - "Authorization"
+              - "Content-Type"
+              - "Cache-Control"
+            allowCredentials: true
