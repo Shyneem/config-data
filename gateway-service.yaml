@@ -48,13 +48,20 @@ spring:
             
       globalcors:
         corsConfigurations:
-          '[/**]': # Aplica a todos los endpoints del Gateway
-            allowedOrigins:
-              - "*" # Permitir todos los orígenes temporalmente
+          '[/**]':
+            allowedOriginPatterns:
+              - "http://*.example.com" # Patrón de dominio permitido
+              - "http://172.30.100.64:30000" # Dominio del frontend local
             allowedMethods:
-              - "*" # Permitir todos los métodos temporalmente
+              - "GET"
+              - "POST"
+              - "PUT"
+              - "DELETE"
+              - "OPTIONS"
             allowedHeaders:
-              - "*" # Permitir todos los encabezados temporalmente
+              - "*" # Permitir todos los encabezados
             exposedHeaders:
-              - "*" # Exponer todos los encabezados temporalmente
+              - "Authorization"
+              - "Content-Type"
+              - "Cache-Control"
             allowCredentials: true
