@@ -26,10 +26,10 @@ spring:
           predicates:
             - Path=/fees/**
 
-        - id: simulation-service
-          uri: lb://simulation-service
+        - id: group-discount-service
+          uri: lb://group-discount-service
           predicates:
-            - Path=/simulation/**
+            - Path=/group-discount/**
 
         - id: file-upload-service
           uri: lb://file-upload-service
