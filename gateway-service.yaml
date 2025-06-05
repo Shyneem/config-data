@@ -31,18 +31,18 @@ spring:
           predicates:
             - Path=/group-discount/**
 
-        - id: file-upload-service
-          uri: lb://file-upload-service
+        - id: special-discount-service
+          uri: lb://special-discount-service
           predicates:
-            - Path=/fileUpload/**
+            - Path=/special-discount/**
             
         - id: auth-service
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
             
-        - id: evaluation-service
-          uri: lb://evaluation-service
+        - id: frequent-client-discount-service
+          uri: lb://frequent-client-discount-service
           predicates:
-            - Path=/evaluation/**
+            - Path=/frequent-client/**
 
