@@ -36,10 +36,10 @@ spring:
           predicates:
             - Path=/special-discount/**
             
-        - id: auth-service
-          uri: lb://auth-service
+        - id: track-occupancy
+          uri: lb://track-occupancy-service
           predicates:
-            - Path=/auth/**
+            - Path=/ocupacion/**
             
         - id: frequent-client-discount-service
           uri: lb://frequent-client-discount-service
