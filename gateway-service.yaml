@@ -16,10 +16,10 @@ spring:
           enabled: true
         
       routes:
-        - id: user-service
-          uri: lb://user-service
+        - id: reservation-service
+          uri: lb://reservation-service
           predicates:
-            - Path=/users/**
+            - Path=/reservation/**
 
         - id: fee-service
           uri: lb://fee-service
