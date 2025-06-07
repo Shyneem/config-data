@@ -16,7 +16,7 @@ spring:
           enabled: true
         
       routes:
-        - id: reservation-service
+        - id: reservation
           uri: lb://reservation-service
           predicates:
             - Path=/reservation/**
