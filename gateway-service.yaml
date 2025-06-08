@@ -46,3 +46,8 @@ spring:
           predicates:
             - Path=/frequent-client/**
 
+        - id: report-service
+          uri: lb://report-service
+          predicates:
+            - Path=/reports/**
+
